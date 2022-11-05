@@ -1,0 +1,126 @@
+
+.row {
+     display: flex;
+     
+     align-content: start;
+ 
+     width: 100%;
+    padding: 0 4px;
+  }
+
+  img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  .clm1{
+    flex: 33.33%;
+    max-width: 33.33%;
+    padding: 0 4px;
+    position: relative;
+  
+   
+  }
+  .bt-right {
+    text-align: center;
+  
+    width: 700px;
+    padding: 10px;
+    background-color:white;
+    opacity:60%;
+    position: absolute;
+    bottom: 8px;
+    right: 200px;
+
+  }
+  .clock {
+    background-color: gray;
+       border-radius: 100%;
+    border: 5px solid black;
+    opacity: 90%;
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    top: 180px;
+    left: 180px;
+  }
+  .seconds {
+    height: 50%;
+    
+    box-sizing: border-box;
+    border: 1px solid red;
+    top: 0%;
+    left: 149px;
+    position: absolute;
+    transform-origin: bottom;
+    /* of-course, would be 60s */
+    animation: secondsM 10s infinite linear;
+  
+  }
+  .minuts {
+    height: 40%;
+    
+    box-sizing: border-box;
+    border: 1px solid black;
+    top:    10%;
+    left: 149px;
+    position: absolute;
+    transform-origin: bottom;
+  
+    /* of-course, would be 60s */
+    animation: minutsM 600s infinite linear;
+    
+  }
+  .hours {
+    height: 30%;
+    
+    box-sizing: border-box;
+    border: 2px solid black;
+    top:20%;
+    left: 149px;
+    transform: rotate(90deg);
+    position: absolute;
+    transform-origin: bottom;
+    /* of-course, would be 60s */
+    animation: hoursM 3600s infinite linear;
+  
+  }
+
+  .hr,.min,.sec {
+    position: absolute;
+    top: 50px;
+    left: 10;
+    width: 150px;
+    height: 200px;
+  
+   
+  }
+
+  @keyframes secondsM {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes minutsM {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes hoursM {
+    0% {
+      transform: rotate(90deg);
+    }
+  
+    100% {
+      transform: rotate(120deg);
+    }
+  }
