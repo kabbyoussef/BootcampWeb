@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Number Guessing Game</title>
+  
+  
+   <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+</head>
+  
+<body>
+<h1>Guess The Number</h1>
+  
+<p>Guess the number between 1 - 100</p>
+  
+<div class="form">
 
+    <div id="guess">
+        <table style="width: 100%;">
+            <tr>
+                <td style="width: 50%;height: 100px;">
+                    <div id="left_score" style="background-color: hotpink;padding: 5px;border: 1 solid black;border-radius: 5px;width: 100px;margin-left: 10px">
+                <label>Score:</label>   <label id="score">100</label><br>
+                <label>Hight Score:</label> <label id="scoreH">0</label>
+                </div> 
+                </td>
+                <td style="width: 50%;height: 100px;text-align: right;">
+                    <div id="right_btn">
+                   <input type="button" value="Reset" id="reset" style="background-color: hotpink;padding: 5px;border: 1 solid hotpink; border-color: hotpink;border-radius: 5px;margin-right: 10px;"/>
+                </div>
+                    </td>
+            </tr>
+        </table>
+    
+    <div id="box">
+        <img src="images/user.png" />
+            <input type = "text" id = "guessField" class = "guessField" placeholder="Guess a number"><br>
+        <input type = "submit" value = "check" class = "guessSubmit" id = "submitguess">
+            <h3 id="showNsg">Guess a number</h3>
+    </div>
+</div>
+<div id="msg">
+    <img src="images/win.png" />
+    <h2 >Congratulation</h2>
+    <h5>Your guess was correct, &nbsp;<label style="font-size: 18px;font-weight: bold;"id="correct"></label> &nbsp; is my secret number</h5>
+    <h4 >Your score &nbsp;:&nbsp;<label id="scoreC"></label></h4>
+    <h4 >Best &nbsp;:&nbsp;<label id="scoreB"></label></h4>
+
+<input type = "submit" value = "Play Again" class = "guessSubmit" id = "playAgain">
+ 
+
+</div>
+<div id="msgOver">
+    <img src="images/gameOver.png" />
+    <h2 >Unfortunately you lost the game</h2>
+    <h5>Don not give up try again</h5>
+    <h4 >My number is &nbsp;:&nbsp;<label id="correctO"></label></h4>
+
+
+<input type = "submit" value = "try Again" class = "guessSubmit" id = "tryAgain">
+ 
+
+</div>
+<div class="histGuess">
+    <h4>Guess History</h4>
+    <ul id="histGuess">
+        
+    </ul>
+</div>
+</div>
+  
+<script type = "text/javascript">
+  
+    var y = Math.floor(Math.random() * 100 )+1;
+   
+ 
+    var guess = 1;
+    var hightScore=10;
+    document.getElementById("submitguess").onclick = function(){
+      
+   // number guessed by user     
+   var x = document.getElementById("guessField").value;
+  
+   if (isNaN(x) || !x ) {
+ 
+    document.getElementById("showNsg").innerHTML="no input or invalid value";
+}else if(guess<=10){
+    
+    if(x == y)
+   {    
+    
+              Congratulation()
+   }
+   else if(x > y) 
+   {    
+      
+    document.getElementById("showNsg").innerHTML="OOPS SORRY!! TRY A SMALLER NUMBER";
+       document.getElementById("score").innerHTML=100-guess
+        guess++;
+   }
+   else
+   {
+       document.getElementById("showNsg").innerHTML="OOPS SORRY!! TRY A BIG NUMBER";
+       document.getElementById("score").innerHTML=100-guess
+       guess++;
+   }  
+   guessHistory(x);
+}else{
+    gameOver()
+   
+}
+
+}
+function Congratulation(){
+    if  (hightScore>guess){hightScore=guess}
+    document.getElementById("correct").innerHTML=y
+    document.getElementById("scoreC").innerHTML=guess
+    document.getElementById("scoreB").innerHTML=hightScore
+    document.getElementById("score").innerHTML=100-guess
+    document.getElementById("scoreH").innerHTML=hightScore
+
+ 
+    document.getElementById("msg").style.display="block"
+    document.getElementById("box").style.display="none"
+    document.getElementById("left_score").style.display="none"
+    document.getElementById("right_btn").style.display="none"
+}
+function gameOver(){
+  
+  
+    document.getElementById("correctO").innerHTML=y
+    document.getElementById("score").innerHTML=0
+    document.getElementById("scoreH").innerHTML=0
+
+ 
+    document.getElementById("msgOver").style.display="block"
+    document.getElementById("box").style.display="none"
+   
+    document.getElementById("right_btn").style.display="none"
+}
+function resetMethod(){
+    document.getElementById("score").innerHTML=100
+   
+    guess=1
+    document.getElementById("guessField").value='';
+}
+document.getElementById("reset").onclick = function (){
+   resetMethod()
+}
+
+    document.getElementById("playAgain").onclick = function(){
+        resetMethod();
+        document.getElementById("msg").style.display="none"
+        document.getElementById("box").style.display="block"
+        document.getElementById("left_score").style.display="block"
+    document.getElementById("right_btn").style.display="block"
+    }
+    document.getElementById("tryAgain").onclick = function(){
+        resetMethod();
+        document.getElementById("msgOver").style.display="none"
+        document.getElementById("box").style.display="block"
+               document.getElementById("right_btn").style.display="block"
+    }
+    function guessHistory(x){
+       
+        document.getElementById("histGuess").innerHTML+="<li>"+x+"</li>"
+    }
+
+</script>
+</body>
+</html>                    

@@ -1,1 +1,119 @@
 
+body{
+    background-color: aqua;
+ align-items: baseline;
+ text-align: center;
+    margin: 0 auto;
+}
+.form{
+    width: 700px;
+   
+    margin: 0 auto;
+    background-color: bisque;
+    padding-bottom: 20px;
+}
+h1{
+
+    font-size: 34px;
+    color: blueviolet;
+}
+#box{
+    display: block;
+    border: 1 solid black ;
+    border-radius: 10px;
+    border-color: darksalmon;
+    text-align: center;
+    background-color: darksalmon;
+    width: 500px;
+    
+    padding: 10px;
+    margin: auto;
+ 
+}
+h3{
+    color: aliceblue;
+}
+img{
+    
+    width:150px ;height: 150px;margin: auto;align-items: center;padding-top: 15px;padding-bottom: 10px;
+        justify-content: center;display: flex;
+}
+.guessField{
+    margin-top: 20px;margin-bottom: 20px;
+    border: 1 solid transparent ;
+    border-color: transparent;
+    font-size: 14px;
+    border-radius: 14px;
+    padding: 10px;
+    text-align: center;
+}
+.guessSubmit{
+    background-color: green;
+    border: 1 solid transparent ;
+    border-color: transparent;
+    font-size: 13px;
+    color: aliceblue;
+    border-radius: 6px;
+    padding: 8px;
+   
+
+}
+.guessSubmit:hover{
+    background-color: darkgreen;
+}
+.guessSubmit:active{
+    background-color: rgb(8, 135, 8);
+}
+
+#msg{
+    display: none;
+    border: 1 solid darkseagreen ;
+    border-radius: 10px;
+    border-color: darkseagreen;
+    text-align: center;
+    background-color: darkseagreen;
+    width: 500px;
+   
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: auto;
+ 
+}
+ #showNsg{
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+ }
+ #right_btn{
+    display: block;
+ }
+ #left_score{
+    display: block;
+ }
+ #msgOver{
+    display: none;
+    border: 1 solid darkgoldenrod; 
+    border-radius: 10px;
+    border-color: darkgoldenrod;
+    text-align: center;
+    background-color: darkgoldenrod;
+    width: 500px;
+   
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: auto;
+ 
+}
+.histGuess{
+  
+    border: 2 solid aqua; 
+    border-radius: 10px;
+    border-color: aqua;
+    text-align: left;
+    background-color: aqua;
+    width: 500px;
+    box-shadow: 1px 2px 5px rgb(133, 156, 156);
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 20px auto 20px auto;
+
+}
