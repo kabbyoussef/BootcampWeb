@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+"http://www.oasis-open.org/docbook/xml/4.2/docbookx.dtd">
+<article>
+  <articleinfo>
+    <title>Sample DocBook</title>
+  </articleinfo>
+  <para>This is a sample DocBook article that illustrates 
+        some simple DocBook XML tags.
+  </para>
+  <sect1>
+    <title>Section 1</title>
+    <para>Paragraph 1 of section 1</para>
+    <sect2>
+      <title>Section 1.1</title>
+      <para>Paragraph 1 of section 1.1</para>
+      <para>Paragraph 2 of section 1.1</para>
+    </sect2>
+    <sect2>
+      <title>Section 1.2</title>
+      <para>Paragraph 1 of section 1.2</para>
+    </sect2>
+  </sect1>
+  <sect1>
+    <title>Section 2</title>
+    <para>Second high-level section in this article
+    </para>
+  </sect1>
+</article>
